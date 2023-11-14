@@ -172,6 +172,42 @@ node *insertAfterNode(node *head, int num, int pos)
     return head;
 }
 
+node *deleteFront(node *head){	
+	node *tempNode;
+	
+	if(tempNode == NULL)
+	{
+		fprintf(stderr, "Nothing to delete.\n");
+		return head;	
+	}
+
+	tempNode = head;
+	head = head->next;
+	free(tempNode);
+	return head;	
+}
+node *deleteEnd(node *head)
+{
+	node *tempNode, *currNode;
+	
+	if(head == NULL)
+	{
+		fprintf(stderr, "Nothing to delete.\n");
+		return head;
+	}
+	
+	currNode = head;
+	
+	while(currNode->next->next != NULL)
+		currNode = currNode->next;
+	
+	tempNode = currNode->next;
+	currNode->next = NULL;
+	free(tempNode);
+	return head;
+}
+
+
 int getPos(node *head, int num)
 {
     int pos = 1;

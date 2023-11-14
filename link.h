@@ -17,6 +17,8 @@ node *insertEnd(node *head, int num);
 node *insertFront(node *head, int num);
 node *insertBeforeNode(node *head, int num, int pos);
 node *insertAfterNode(node *head, int num, int pos);
+node *deleteFront(node *head);
+node *deleteEnd(node *head);
 int getPos(node *head, int num);
 
 #endif

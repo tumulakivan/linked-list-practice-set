@@ -20,7 +20,9 @@ int main(int argc, char **argv)
         printf("8.) insert a node at the beginning of the list\n");
         printf("9.) Insert a node before a specified node\n");
         printf("10.) Insert a node after a specified node\n");
-        printf("11.) Get position of specified data\n");
+        printf("11.) Delete a node at the beginning of the list\n");
+        printf("12.) Delete a node at the end of the list\n");
+        printf("15.) Get position of specified data\n");
         printf("0.) Exit the program\n");
         scanf("%d", &choice);
 
@@ -93,6 +95,16 @@ int main(int argc, char **argv)
             head = insertAfterNode(head, data, getPos(head, flag));
             break;
         case 11:
+        	system("cls");
+        	head = deleteFront(head);
+        	printf("First node deleted.\n");
+        	break;
+        case 12:
+        	system("cls");
+        	head = deleteEnd(head);
+        	printf("Last node deleted.\n");
+        	break;
+        case 15:
             system("cls");
             printf("Enter data to locate: ");
             scanf("%d", &data);
